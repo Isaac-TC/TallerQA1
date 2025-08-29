@@ -1,4 +1,4 @@
-package ParonesCreacionales;
+package PatronesCreacionales;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package ParonesCreacionales;
+package PatronesCreacionales;
 import java.sql.*;
 
 class DatabaseConnection {
