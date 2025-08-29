@@ -31,7 +31,7 @@ class DatabaseConnection {
         for (int i = 0; i < params.length; i++) {
             stmt.setObject(i + 1, params[i]);
         }
-        return stmt.executeQuery(); // recuerda cerrar el ResultSet afuera
+        return stmt.executeQuery(); 
     }
 
     public void close() throws SQLException {
@@ -42,7 +42,7 @@ class DatabaseConnection {
     }
 }
 
-public class Sing {
+public class Singleton {
     public static void main(String[] args) {
         try {
             DatabaseConnection db = DatabaseConnection.getInstance("database.db");
@@ -51,7 +51,7 @@ public class Sing {
             db.query("INSERT INTO users (name) VALUES (?)", "Isaac Tonato");
             db.query("INSERT INTO users (name) VALUES (?)", "Eduardo Tonato");
 
-            // Reusar la misma instancia
+            
             DatabaseConnection db2 = DatabaseConnection.getInstance("database.db");
             try (ResultSet rs = db2.select("SELECT * FROM users")) {
                 while (rs.next()) {

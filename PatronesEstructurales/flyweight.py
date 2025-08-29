@@ -5,7 +5,7 @@ class TipoComida:
         self.sonido = sonido
 
     def mostrar(self, mesa, lugar):
-        print(f"🍽️ Servir {self.nombre} en mesa {mesa}, lugar {lugar} "
+        print(f" Servir {self.nombre} en mesa {mesa}, lugar {lugar} "
               f"con imagen {self.imagen} y sonido {self.sonido}")
 
 
@@ -29,7 +29,6 @@ class Plato:
         self.tipo.mostrar(self.mesa, self.lugar)
 
 
-# --- Uso ---
 tipo_pizza = FabricaComida.obtener_tipo("Pizza", "pizza.png", "croc.mp3")
 tipo_burger = FabricaComida.obtener_tipo("Hamburguesa", "burger.png", "crunch.mp3")
 

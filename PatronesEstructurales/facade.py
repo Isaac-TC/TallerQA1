@@ -20,7 +20,7 @@ class SistemaOperativo:
     def modo_juego(self): print("SO: modo juego habilitado")
     def modo_ahorro(self): print("SO: modo ahorro habilitado")
 
-# ------- Fachada -------
+
 class Computador:
     def __init__(self):
         self.cpu = CPU()
@@ -30,36 +30,36 @@ class Computador:
         self.so  = SistemaOperativo()
 
     def encender(self):
-        print(">> Encendiendo PC...")
+        print("Encendiendo PC...")
         self.cpu.encender()
         self.disco.leer_bootloader()
         self.ram.cargar_kernel()
         self.so.iniciar()
         self.gpu.activar("normal")
-        print(">> PC lista.\n")
+        print("PC lista.\n")
 
     def apagar(self):
-        print(">> Apagando PC...")
+        print("Apagando PC...")
         self.so.apagar()
         self.disco.guardar_estado()
         self.gpu.desactivar()
         self.ram.liberar()
         self.cpu.apagar()
-        print(">> PC apagada.\n")
+        print("PC apagada.\n")
 
     def modo_juego(self):
-        print(">> Activando modo JUEGO 🎮")
+        print("Activando modo JUEGO ")
         self.so.modo_juego()
         self.gpu.activar("alto rendimiento")
-        print(">> FPS felices.\n")
+        print("FPS felices.\n")
 
     def modo_ahorro(self):
-        print(">> Activando modo AHORRO 🔋")
+        print("Activando modo AHORRO ")
         self.so.modo_ahorro()
         self.gpu.activar("eco")
-        print(">> Batería agradecida.\n")
+        print("Batería agradecida.\n")
 
-# ------- Uso -------
+
 pc = Computador()
 pc.encender()
 pc.modo_juego()

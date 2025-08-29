@@ -1,7 +1,7 @@
 package PatronesEstructurales;
 import java.util.*;
 
-// Flyweight: información compartida (intrínseca)
+
 final class FoodType {
     private final String nombre;
     private final String imagen;
@@ -14,16 +14,16 @@ final class FoodType {
     }
 
     public void mostrar(int mesa, String lugar) {
-        System.out.printf("🍽️ Servir %s en mesa %d, lugar %s con imagen %s y sonido %s%n",
+        System.out.printf("Servir %s en mesa %d, lugar %s con imagen %s y sonido %s%n",
                 nombre, mesa, lugar, imagen, sonido);
     }
 }
 
-// Factory de flyweights (cache)
+
 final class FoodFactory {
     private static final Map<String, FoodType> tipos = new HashMap<>();
 
-    // Nota: Si pides el mismo nombre con otras imagen/sonido, se ignoran.
+    
     public static FoodType obtenerTipo(String nombre, String imagen, String sonido) {
         return tipos.computeIfAbsent(nombre, n -> new FoodType(n, imagen, sonido));
     }
@@ -33,11 +33,11 @@ final class FoodFactory {
     }
 }
 
-// Contexto: estado extrínseco (cambia por objeto)
+
 final class Dish {
-    private final FoodType tipo; // compartido
-    private final int mesa;      // extrínseco
-    private final String lugar;  // extrínseco
+    private final FoodType tipo; 
+    private final int mesa;      
+    private final String lugar;  
 
     public Dish(FoodType tipo, int mesa, String lugar) {
         this.tipo = tipo;
@@ -50,7 +50,7 @@ final class Dish {
     }
 }
 
-public class FoodFlyweightDemo {
+public class Flyweight{
     public static void main(String[] args) {
         FoodType pizza = FoodFactory.obtenerTipo("Pizza", "pizza.png", "croc.mp3");
         FoodType burger = FoodFactory.obtenerTipo("Hamburguesa", "burger.png", "crunch.mp3");

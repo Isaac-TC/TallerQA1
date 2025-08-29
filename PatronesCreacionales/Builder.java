@@ -2,7 +2,7 @@ package PatronesCreacionales;
 import java.util.ArrayList;
 import java.util.List;
 
-// Producto
+
 class Part {
     private final String name;
     private final double price;
@@ -17,7 +17,7 @@ class Part {
     }
 }
 
-// Agregado (equivalente a Meal)
+
 class AutoKit {
     private final List<Part> parts = new ArrayList<>();
     public void addPart(Part p) { parts.add(p); }
@@ -32,7 +32,7 @@ class AutoKit {
     }
 }
 
-// Builder con chaining
+
 class AutoKitBuilder {
     private final AutoKit kit = new AutoKit();
 
@@ -59,8 +59,8 @@ class AutoKitBuilder {
     public AutoKit getKit() { return kit; }
 }
 
-// Demo
-public class AutoBuilderDemo {
+
+public class Builder {
     public static void main(String[] args) {
         AutoKit kit = new AutoKitBuilder()
                 .addOilFilter()

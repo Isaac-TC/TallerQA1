@@ -31,7 +31,7 @@ class AutoKitBuilder:
     def __init__(self):
         self.kit = AutoKit()
 
-    # Componentes comunes
+    
     def add_brake_pads(self):
         self.kit.add_part(Part("Pastillas de freno (juego)", 35))
         return self
@@ -56,7 +56,6 @@ class AutoKitBuilder:
         return self.kit
 
 
-# --- Uso ---
 builder = AutoKitBuilder()
 kit = (builder
        .add_oil_filter()

@@ -27,7 +27,7 @@ class SistemaOperativo {
     void modoAhorro() { System.out.println("SO: modo ahorro habilitado"); }
 }
 
-// ---------- Fachada ----------
+
 class Computador {
     private final CPU cpu = new CPU();
     private final RAM ram = new RAM();
@@ -36,42 +36,42 @@ class Computador {
     private final SistemaOperativo so = new SistemaOperativo();
 
     public void encender() {
-        System.out.println(">> Encendiendo PC...");
+        System.out.println("Encendiendo PC...");
         cpu.encender();
         disco.leerBootloader();
         ram.cargarKernel();
         so.iniciar();
         gpu.activar("normal");
-        System.out.println(">> PC lista.\n");
+        System.out.println("PC lista.\n");
     }
 
     public void apagar() {
-        System.out.println(">> Apagando PC...");
+        System.out.println("Apagando PC...");
         so.apagar();
         disco.guardarEstado();
         gpu.desactivar();
         ram.liberar();
         cpu.apagar();
-        System.out.println(">> PC apagada.\n");
+        System.out.println("PC apagada.\n");
     }
 
     public void modoJuego() {
-        System.out.println(">> Activando modo JUEGO 🎮");
+        System.out.println("Activando modo JUEGO 🎮");
         so.modoJuego();
         gpu.activar("alto rendimiento");
-        System.out.println(">> FPS felices.\n");
+        System.out.println("FPS felices.\n");
     }
 
     public void modoAhorro() {
-        System.out.println(">> Activando modo AHORRO 🔋");
+        System.out.println("Activando modo AHORRO 🔋");
         so.modoAhorro();
         gpu.activar("eco");
-        System.out.println(">> Batería agradecida.\n");
+        System.out.println("Batería agradecida.\n");
     }
 }
 
-// ---------- Demo ----------
-public class ComputadorFacadeDemo {
+
+public class Facade {
     public static void main(String[] args) {
         Computador pc = new Computador();
         pc.encender();
